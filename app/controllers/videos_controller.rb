@@ -18,6 +18,7 @@ class VideosController < ApplicationController
      #Create action saves the video into the database
     def create
         @category = Category.new(category_params)
+        @pornstar = Pornstar.new(pornstar_params)
         @video = Video.new
         if @video.save(video_params)
             flash[:notice] = "Successfully posted video!"
@@ -64,7 +65,7 @@ class VideosController < ApplicationController
     private
     
     def video_params
-        params.require(:video).permit(:title, :preview, :pornstars, :description, :category_id)
+        params.require(:video).permit(:title, :preview, :pornstar_id, :description, :category_id)
     end
     
     def find_video

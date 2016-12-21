@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'starthere' => 'pages#starthere'
   
   resources :videos
+  resources :pornstars
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
