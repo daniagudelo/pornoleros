@@ -14,8 +14,16 @@
     </div>
   <% end %>
   <%= f.input :title %>
-  <%= f.input :link %>
-  <%= f.input :starring %>
+  <%= f.input :preview %>
   <%= f.input :description %>
+  <div class="field">
+    <%= f.label :pornstar_id %><br>
+    <%= f.collection_select :pornstar_ids, Pornstar.all, :id, :name %>
+  </div>
+  <div class="field">
+  <%= f.label :category_id %><br>
+  <%= f.collection_select :category_ids, Category.all, :id, :name %>
+</div>
+<br>
   <%= f.submit 'Save' %>
 <% end %>
