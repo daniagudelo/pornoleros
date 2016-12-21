@@ -9,5 +9,10 @@ RSpec.describe User, type: :model do
         user = User.new(password: nil)
         expect(user).to_not be_valid
     end
+    
+    it "should have many videos" do
+        user = User.reflect_on_association(:videos)
+        expect(user) == :has_many
+    end
   pending "add some examples to (or delete) #{__FILE__}"
 end
